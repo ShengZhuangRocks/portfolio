@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import ReactMarkdown from "react-markdown";
 
 export default function ProjectSumaries({ projects }) {
   return (

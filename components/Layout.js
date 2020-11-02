@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Header from "./Header";
-import styles from "../styles/Layout.module.css";
+import styles from "../styles/module/layout.module.css";
 import FloatBar from "./FloatBar";
 import ToTopButton from "./ToTopButton";
 

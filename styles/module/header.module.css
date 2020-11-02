@@ -1,0 +1,14 @@
+.header {
+  margin: 5px auto 5px auto;
+  padding: 10px 20px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon {
+  margin-right: 10px;
+  transform: rotate(180deg);
+}

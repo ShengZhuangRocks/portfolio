@@ -1,11 +1,11 @@
 import React from "react";
+import styles from "../styles/module/myHr.module.css";
 
 export default function MyHr() {
   return (
-    <div style={{ display: "flex", alignItems: "center" }}>
-      {/* <div style={{ flex: "12", backgroundColor: "black", height: "0.5px" }} /> */}
-      <hr style={{ flex: "12", border: "none", borderTop: "dotted" }} />
-      <div style={{ flex: "1", backgroundColor: "black", height: "5px" }} />
+    <div className={styles.whole}>
+      <hr className={styles.leftpart} />
+      <div className={styles.rightpart} />
     </div>
   );
 }

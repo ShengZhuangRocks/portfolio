@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../styles/Layout.module.css";
+import styles from "../styles/module/header.module.css";
 import NavLinks from "./NavLinks";
 
 export default function Header() {

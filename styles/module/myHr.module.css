@@ -1,0 +1,16 @@
+.whole {
+  display: flex;
+  align-items: center;
+}
+
+.leftpart {
+  flex: 12;
+  border: none;
+  border-top: dotted;
+}
+
+.rightpart {
+  flex: 1;
+  background-color: black;
+  height: 5px;
+}

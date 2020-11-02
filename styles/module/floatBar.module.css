@@ -1,0 +1,14 @@
+.bar {
+  margin-right: auto;
+  margin-left: 10px;
+  width: 20px;
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  text-align: center;
+}
+
+.icon {
+  display: block;
+  margin-bottom: 15px;
+}
