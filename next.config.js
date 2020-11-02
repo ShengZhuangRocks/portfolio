@@ -1,3 +1,5 @@
+const debug = process.env.NODE_ENV !== "production";
+
 module.exports = {
   target: "serverless",
   webpack: function (config) {
@@ -7,4 +9,5 @@ module.exports = {
     });
     return config;
   },
+  assetPrefix: !debug ? "https://shengzhuangrocks.github.io/portofolio/" : "",
 };
