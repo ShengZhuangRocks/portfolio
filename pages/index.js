@@ -1,65 +1,70 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Layout from "../components/Layout";
+import MyHr from "../components/MyHr";
+import ProjectSumaries from "../components/ProjectSumaries";
+import ToTopButton from "../components/ToTopButton";
+import { getMdData } from "../utils/getMdData";
 
-export default function Home() {
+const Index = ({ posts, projects, title, ...props }) => {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+    <Layout pageTitle={title}>
+      <h3>I am Sheng Zhuang</h3>
+      <MyHr />
+      <h4>About me</h4>
+      <p>I am a freelance full stack web developer.</p>
+      <p>I live in Brisbane, Queensland.</p>
+      <p>
+        I am right now looking for a job, feel free to{" "}
+        <a>
+          <strong>contact me</strong>
         </a>
-      </footer>
-    </div>
-  )
+      </p>
+
+      <MyHr />
+      <h4>Projects</h4>
+      <ProjectSumaries projects={projects} />
+
+      <MyHr />
+      <h4>Skills</h4>
+      <p style={{ textAlign: "center" }}>
+        My favourite technologies and main focus right now :
+      </p>
+      <ul>
+        <li>HTML & Css</li>
+        <li>Javascript & Typescript</li>
+        <li>Nodejs & PostgreSQL & TypeORM & Redis</li>
+        <li>React & Graphql </li>
+      </ul>
+      <p style={{ textAlign: "center" }}>I am also familiar with :</p>
+      <ul>
+        <li>Python, Django</li>
+        <li>Go, Kotlin</li>
+      </ul>
+      <p style={{ textAlign: "center" }}>My favourite tools :</p>
+      <ul>
+        <li>VS code</li>
+        <li>Git Bash, Github</li>
+        <li>Docker</li>
+      </ul>
+      <MyHr />
+    </Layout>
+  );
+};
+
+export default Index;
+
+export async function getStaticProps() {
+  const configData = await import(`../siteconfig.json`);
+  const postContext = require.context("../posts", true, /\.md$/);
+  // TODO: sorting posts & projects
+  const posts = getMdData(postContext);
+  const projectContext = require.context("../project-posts", true, /\.md$/);
+  const projects = getMdData(projectContext);
+
+  return {
+    props: {
+      posts,
+      projects,
+      title: configData.default.title,
+    },
+  };
 }
