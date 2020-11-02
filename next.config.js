@@ -9,5 +9,5 @@ module.exports = {
     });
     return config;
   },
-  assetPrefix: !debug ? "https://shengzhuangrocks.github.io/portofolio/" : "",
+  // assetPrefix: !debug ? "https://shengzhuangrocks.github.io/portofolio/" : "",
 };
