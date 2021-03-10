@@ -2,10 +2,7 @@ import Link from "next/link";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 import Layout from "../../../components/Layout";
-import {
-  getFileNamesAsSlugs,
-  getPathsAsSlugs,
-} from "../../../utils/getFileNamesAsSlugs";
+import { getPathsAsSlugs } from "../../../utils/getFileNamesAsSlugs";
 import CodeBlock from "../../../utils/CodeBlock";
 
 const BlogPost = ({ siteTitle, frontmatter, markdownbody }) => {
@@ -32,7 +29,6 @@ const BlogPost = ({ siteTitle, frontmatter, markdownbody }) => {
 export default BlogPost;
 
 export async function getStaticProps({ ...ctx }) {
-  console.log(ctx);
   const { sub, postname } = ctx.params;
   const isSub = sub !== "nosub";
   const content = isSub

@@ -26,7 +26,5 @@ export const getSubfolderName = (path) => {
   //     "md$" // end with md
   // );
   const sub = re.exec(path);
-  // console.log(path);
-  // console.log(sub ? sub[1] : undefined);
   return sub ? sub[1] : "nosub";
 };

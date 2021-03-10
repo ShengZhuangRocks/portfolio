@@ -27,7 +27,7 @@ const Layout = ({ children, pageTitle, ...props }) => {
       <div className={styles.layout}>
         <Header />
         <div className={styles.content}>{children}</div>
-        <FloatBar />
+        {/* <FloatBar /> */}
         <ToTopButton />
       </div>
       <footer>Built by Sheng, all about Sheng, @Copyright 2020</footer>

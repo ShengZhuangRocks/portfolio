@@ -11,9 +11,6 @@ export const getMdData = (context) => {
     let subFolderName = getSubfolderName(key);
     const value = values[index];
     const document = matter(value.default);
-    console.log(subFolderName);
-    console.log(slug);
-    console.log("-----");
     return {
       frontmatter: document.data,
       markdownBody: document.content,

@@ -34,4 +34,9 @@ yarn-error.log*
 .vercel
 
 # unfinished blog
-/posts/.post3.md
+posts/post3.md
+
+# tailwind setup
+postcss.config.js
+tailwind.config.js
+styles/index.css

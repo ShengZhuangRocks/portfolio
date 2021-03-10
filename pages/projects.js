@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../components/Layout";
 import MyHr from "../components/MyHr";
 import ProjectSumaries from "../components/ProjectSumaries";
-import { getMdData } from "./../utils/getMdData";
+import { getMdData } from "../utils/getMdData";
 
 export default function Projects({ projects, title, ...props }) {
   return (

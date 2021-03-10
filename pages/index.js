@@ -1,8 +1,8 @@
 import Layout from "../components/Layout";
 import MyHr from "../components/MyHr";
 import ProjectSumaries from "../components/ProjectSumaries";
-import ToTopButton from "../components/ToTopButton";
 import { getMdData } from "../utils/getMdData";
+// import "../styles/main.css";
 
 const Index = ({ posts, projects, title, ...props }) => {
   return (
