@@ -20,6 +20,8 @@ export async function getStaticProps() {
   const configData = await import(`../siteconfig.json`);
   const posts = getMdData(require.context("../posts", true, /\.md$/));
 
+  // console.log(posts.map((p) => console.log(p.subFolderName)));
+
   return {
     props: {
       posts,

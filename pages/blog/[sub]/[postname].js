@@ -1,8 +1,12 @@
 import Link from "next/link";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
-import Layout from "../../components/Layout";
-import { getFileNamesAsSlugs } from "../../utils/getFileNamesAsSlugs";
+import Layout from "../../../components/Layout";
+import {
+  getFileNamesAsSlugs,
+  getPathsAsSlugs,
+} from "../../../utils/getFileNamesAsSlugs";
+import CodeBlock from "../../../utils/CodeBlock";
 
 const BlogPost = ({ siteTitle, frontmatter, markdownbody }) => {
   if (!frontmatter) return null;
@@ -15,7 +19,10 @@ const BlogPost = ({ siteTitle, frontmatter, markdownbody }) => {
         <h1>{frontmatter.title}</h1>
         <p>{frontmatter.author}</p>
         <div>
-          <ReactMarkdown source={markdownbody} />
+          <ReactMarkdown
+            source={markdownbody}
+            renderers={{ code: CodeBlock }}
+          />
         </div>
       </article>
     </Layout>
@@ -25,9 +32,13 @@ const BlogPost = ({ siteTitle, frontmatter, markdownbody }) => {
 export default BlogPost;
 
 export async function getStaticProps({ ...ctx }) {
-  const { postname } = ctx.params;
-  const content = await import(`../../posts/${postname}.md`);
-  const config = await import(`../../siteconfig.json`);
+  console.log(ctx);
+  const { sub, postname } = ctx.params;
+  const isSub = sub !== "nosub";
+  const content = isSub
+    ? await import(`../../../posts/${sub}/${postname}.md`)
+    : await import(`../../../posts/${postname}.md`);
+  const config = await import(`../../../siteconfig.json`);
   const data = matter(content.default);
   return {
     props: {
@@ -39,10 +50,10 @@ export async function getStaticProps({ ...ctx }) {
 }
 
 export async function getStaticPaths() {
-  const blogContext = require.context("../../posts", true, /\.md$/);
-  const blogSlugs = getFileNamesAsSlugs(blogContext);
+  const blogContext = require.context("../../../posts", true, /\.md$/);
+  const blogSlugs = getPathsAsSlugs(blogContext);
 
-  const paths = blogSlugs.map((slug) => `/blog/${slug}`);
+  const paths = blogSlugs.map((slug) => `/blog/${slug.sub}/${slug.filename}`);
   return {
     paths,
     fallback: false,
