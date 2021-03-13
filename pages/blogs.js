@@ -1,18 +1,19 @@
 import Layout from "../components/Layout";
 import MyHr from "../components/MyHr";
-import PostList from "../components/PostList";
 import { getMdData } from "../utils/getMdData";
-import Post from "../components/Post";
+import PostSumaries from "../components/PostSumaries";
+import styled from "styled-components";
+
+const Title = styled.h3`
+  padding-bottom: 10px;
+`;
 
 const Blogs = ({ posts, title, description, ...props }) => {
-  const postchildren =
-    posts && posts.map((post, idx) => <Post post={post} key={idx} />);
-
   return (
     <Layout pageTitle={title}>
-      <h3>My blogs</h3>
+      <Title>My blogs</Title>
       <MyHr />
-      <PostList>{postchildren}</PostList>
+      <PostSumaries posts={posts} />
       <MyHr />
     </Layout>
   );

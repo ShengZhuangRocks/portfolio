@@ -1,16 +1,12 @@
 .button {
-  /* position and offset */
   position: fixed;
   bottom: 100px;
   right: 100px;
   z-index: 99;
-  /* size */
   height: 30px;
   width: 30px;
-  /* color */
   background-color: black;
   color: white;
-  /* others */
   border: none;
   outline: none;
   border-radius: 50%;

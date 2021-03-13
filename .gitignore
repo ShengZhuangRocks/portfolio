@@ -40,3 +40,8 @@ posts/post3.md
 postcss.config.js
 tailwind.config.js
 styles/index.css
+
+# components and pages
+.StackItem.js
+.StackList.js
+.about.js

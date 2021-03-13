@@ -3,11 +3,16 @@ import Layout from "../components/Layout";
 import MyHr from "../components/MyHr";
 import ProjectSumaries from "../components/ProjectSumaries";
 import { getMdData } from "../utils/getMdData";
+import styled from "styled-components";
+
+const Title = styled.h3`
+  padding-bottom: 10px;
+`;
 
 export default function Projects({ projects, title, ...props }) {
   return (
     <Layout pageTitle={title}>
-      <h3>My Projects</h3>
+      <Title>My Projects</Title>
       <MyHr />
       <ProjectSumaries projects={projects} />
       <MyHr />

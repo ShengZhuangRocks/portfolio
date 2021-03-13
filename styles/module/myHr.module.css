@@ -4,6 +4,7 @@
 }
 
 .leftpart {
+  margin: 0;
   flex: 12;
   border: none;
   border-top: dotted;
