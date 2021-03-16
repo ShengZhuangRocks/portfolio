@@ -3,7 +3,7 @@ import ProjectSumaries from "../components/ProjectSumaries";
 import { getMdData } from "../utils/getMdData";
 import styled from "styled-components";
 import PostSumaries from "../components/PostSumaries";
-import More from "../components/More";
+import MoreButton from "../components/MoreButton";
 import Subt from "../components/SubTitle";
 
 const Title = styled.h3`
@@ -147,14 +147,14 @@ const Index = ({ posts, projects, title }) => {
       <Subt>Projects</Subt>
       <Card nopadding>
         <ProjectSumaries projects={projects.slice(0, 2)} />
-        <More link="projects" />
+        <MoreButton link="projects" />
       </Card>
 
       {/* recent articles */}
       <Subt>Articles</Subt>
       <Card nopadding>
         <PostSumaries posts={posts.slice(0, 2)} />
-        <More link="blogs" />
+        <MoreButton link="blogs" />
       </Card>
     </Layout>
   );

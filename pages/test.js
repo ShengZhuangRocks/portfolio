@@ -1,17 +1,22 @@
-import Image from "next/image";
+import styled, { createGlobalStyle } from "styled-components";
 
-function Test() {
-  return (
-    <>
-      <Image
-        src="/../public/static/graffetti.jpg"
-        alt="Picture of the author"
-        width={600}
-        height={400}
-        layout="intrinsic"
-      />
-    </>
-  );
-}
+const Thing = styled.div`
+  && {
+    color: blue;
+  }
+`;
+
+const GlobalStyle = createGlobalStyle`
+  div${Thing} {
+    color: red;
+  }
+`;
+
+const Test = () => (
+  <>
+    <GlobalStyle />
+    <Thing>I'm blue, da ba dee da ba daa</Thing>
+  </>
+);
 
 export default Test;

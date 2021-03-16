@@ -3,6 +3,7 @@ title: "How to load picture in react"
 author: "Sheng Zhuang"
 date: "12/03/2021"
 stack: "React Nextjs Webpack"
+image: "p11.jpg"
 ---
 
 the error:

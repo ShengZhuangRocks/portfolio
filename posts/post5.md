@@ -3,6 +3,7 @@ title: "How to update the state in the component down in the tree using react ho
 author: "Sheng Zhuang"
 date: "17/02/2021"
 stack: "React"
+image: "p9.jpg"
 ---
 
 ```jsx

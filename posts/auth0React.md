@@ -3,6 +3,7 @@ title: "How to setup auth0 with react project"
 author: "Sheng Zhuang"
 date: "05/03/2021"
 stack: "React authorization auth0"
+image: "p2.jpg"
 ---
 
 "Auth0 is an easy to implement, adaptable authentication and authorization platform." from Auth0 official site.

@@ -3,6 +3,7 @@ title: "Useful dom object attributes selector"
 author: "Sheng Zhuang"
 date: "01/11/2020"
 stacks: "Javascript HTML CSS"
+image: "p6.jpg"
 ---
 
 CSS selector is very useful in many places, like in jQuery, BeautifulSoup for dom manipulation and web scrapping.

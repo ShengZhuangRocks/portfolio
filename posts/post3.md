@@ -3,6 +3,7 @@ title: "oop concept inheritence vs composition vs mixin vs prototype"
 author: "Sheng Zhuang"
 date: "02/11/2020"
 stack: "javascript oop"
+image: "p18.jpg"
 ---
 
 all about dry, try recycle the existing code

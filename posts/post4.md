@@ -3,6 +3,7 @@ title: "How to parse props in React functional component"
 author: "Sheng Zhuang"
 date: "16/02/2021"
 stack: "React"
+image: "p8.jpg"
 ---
 
 Basic pattern of a react functional component(RFC) is a function take props as argument and output a jsx element.

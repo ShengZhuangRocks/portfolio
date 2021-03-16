@@ -20,7 +20,7 @@ export default function ProjectSumaries({ projects }) {
     <ul>
       {projects.length > 0 &&
         projects.map((project, index) => (
-          <PostCard key={index}>
+          <PostCard key={index} withCursor>
             <Link href={{ pathname: `/project/${project.slug}` }}>
               <div>
                 <h4>

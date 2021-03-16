@@ -3,6 +3,7 @@ title: "How to Redux"
 author: "Sheng Zhuang"
 date: "01/03/2021"
 stack: "React Redux"
+image: "p14.jpg"
 ---
 
 reducer composition

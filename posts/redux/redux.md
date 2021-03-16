@@ -3,6 +3,7 @@ title: "How to start to Redux quickly"
 author: "Sheng Zhuang"
 date: "18/02/2021"
 stack: "React Redux"
+image: "p13.jpg"
 ---
 
 What is redux, why need redux

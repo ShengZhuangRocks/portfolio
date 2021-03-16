@@ -3,6 +3,7 @@ title: "about session and cookie"
 author: "Sheng Zhuang"
 date: "07/03/2021"
 stack: "Session Cookie"
+image: "p12.jpg"
 ---
 
 what is session

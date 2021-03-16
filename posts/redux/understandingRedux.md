@@ -3,6 +3,7 @@ title: "How to set and get data in Redux"
 author: "Sheng Zhuang"
 date: "03/03/2021"
 stack: "React Redux"
+image: "p16.jpg"
 ---
 
 When I first learned redux, there are really a lot of new terminology that I had never heard of before and boilerplate code, which steeps the learning curve and can be quite daunting.

@@ -4,23 +4,55 @@ import ReactMarkdown from "react-markdown";
 import Layout from "../../../components/Layout";
 import { getPathsAsSlugs } from "../../../utils/getFileNamesAsSlugs";
 import CodeBlock from "../../../utils/CodeBlock";
+import styled from "styled-components";
+
+const SR = styled.div`
+  & h3 {
+    padding: 10px 0;
+  }
+  & p {
+    padding: 10px 0;
+  }
+  & hr {
+    margin: 20px 0;
+    border: none;
+    border-top: dotted 3px black;
+  }
+`;
+
+const FR = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 0;
+`;
+
+const Title = styled.h1`
+  text-align: center;
+  padding-bottom: 10px;
+`;
 
 const BlogPost = ({ siteTitle, frontmatter, markdownbody }) => {
   if (!frontmatter) return null;
   return (
-    <Layout pageTitle={`${siteTitle} | ${frontmatter.title}`}>
-      <Link href="/blogs">
-        <a>Back to post list</a>
-      </Link>
+    <Layout
+      pageTitle={`${siteTitle} | ${frontmatter.title}`}
+      description={frontmatter.description || ""}
+    >
+      {/* to the right */}
+      <FR>
+        <Link href="/blogs">
+          <a>Back to post list</a>
+        </Link>
+      </FR>
+      {/*  */}
       <article>
-        <h1>{frontmatter.title}</h1>
-        <p>{frontmatter.author}</p>
-        <div>
+        <Title>{frontmatter.title}</Title>
+        <SR>
           <ReactMarkdown
             source={markdownbody}
             renderers={{ code: CodeBlock }}
           />
-        </div>
+        </SR>
       </article>
     </Layout>
   );

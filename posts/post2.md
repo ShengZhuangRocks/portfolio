@@ -3,6 +3,7 @@ title: "for loop vs forEach() vs map()"
 author: "Sheng Zhuang"
 date: "01/11/2020"
 stack: "javascript"
+image: "p19.jpg"
 ---
 
 Except differences in syntax:

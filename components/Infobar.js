@@ -2,14 +2,27 @@ import React from "react";
 import styled from "styled-components";
 
 const H = styled.div`
-  width: 100vw;
+  width: 100%;
   background-color: #e0e0e0;
-  padding: 0 60px 0 20px;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   & div {
-    padding: 3px;
+    padding: 3px 0;
     font-size: 12pt;
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    & div {
+      padding: 0;
+      padding-top: 3px;
+    }
+    & div ~ div {
+      padding-bottom: 3px;
+    }
+  }
+  @media (max-width: 414px) {
+    display: none;
   }
 `;
 
