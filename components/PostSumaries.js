@@ -5,31 +5,29 @@ import styled from "styled-components";
 import Image from "next/image";
 import RMButton from "./RMButton";
 
-const Date = styled.div`
-  font-size: 11pt;
-`;
-
-const F = styled.div`
+// card content container
+const C3 = styled.div`
   display: flex;
   gap: 20px;
   flex-direction: ${(props) => props.isOdd && "row-reverse"};
+  & .info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    & p.date {
+      font-size: 11pt;
+    }
+  }
+  & .button-flex {
+    display: flex;
+    justify-content: ${(props) => (props.isOdd ? "flex-start" : "flex-end")};
+    @media (max-width: 414px) {
+      justify-content: flex-end;
+    }
+  }
   @media (max-width: 414px) {
     flex-direction: column;
-  }
-`;
-
-const V = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-
-const LorR = styled.div`
-  display: flex;
-  justify-content: ${(props) => (props.isOdd ? "flex-start" : "flex-end")};
-  @media (max-width: 414px) {
-    justify-content: flex-end;
   }
 `;
 
@@ -41,8 +39,11 @@ export default function ProjectSumaries({ posts }) {
           const isOdd = idx % 2 === 0;
           return (
             <PostCard key={idx}>
-              <F isOdd={isOdd}>
+              {/* card content container */}
+              <C3 isOdd={isOdd}>
                 {/* image */}
+                {/* sheng: this div outside the image just to make sure that image size is right */}
+                {/* not sure why this behaviour, need to dig into next/image */}
                 <div>
                   <Image
                     src={`/static/${post.frontmatter.image}`}
@@ -53,23 +54,17 @@ export default function ProjectSumaries({ posts }) {
                   />
                 </div>
                 {/* info */}
-                <V>
+                <div className="info">
                   <div>
-                    <Date>{post.frontmatter.date}</Date>
+                    <p className="date">{post.frontmatter.date}</p>
                     <h4>{post.frontmatter.title}</h4>
                     <p>{post.contentSnippet}...</p>
                   </div>
-                  <LorR isOdd={isOdd}>
-                    <Link
-                      href={{
-                        pathname: `/blog/${post.subFolderName}/${post.slug}`,
-                      }}
-                    >
-                      <RMButton>Read more ...</RMButton>
-                    </Link>
-                  </LorR>
-                </V>
-              </F>
+                  <div className="button-flex">
+                    <RMButton post={post}>Read more ...</RMButton>
+                  </div>
+                </div>
+              </C3>
             </PostCard>
           );
         })}

@@ -38,5 +38,3 @@ export default function ToTopButton() {
     </Button>
   );
 }
-
-// this tabIndex should be dynamic per links input of NavLinks

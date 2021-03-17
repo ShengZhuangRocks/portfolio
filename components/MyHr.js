@@ -1,8 +1,9 @@
 import React from "react";
-import styles from "../styles/module/myHr.module.css";
 import styled from "styled-components";
 
-const Hr = styled.div`
+const H = styled.div`
+  display: flex;
+  align-items: center;
   &:hover {
     & hr {
       transition: flex 0.3s ease-in-out;
@@ -11,11 +12,24 @@ const Hr = styled.div`
   }
 `;
 
+const L = styled.hr`
+  margin: 0;
+  flex: 12;
+  border: none;
+  border-top: dotted;
+`;
+
+const R = styled.div`
+  flex: 1;
+  background-color: black;
+  height: 5px;
+`;
+
 export default function MyHr() {
   return (
-    <Hr className={styles.whole}>
-      <hr className={styles.leftpart} />
-      <div className={styles.rightpart} />
-    </Hr>
+    <H>
+      <L />
+      <R />
+    </H>
   );
 }

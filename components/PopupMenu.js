@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useRouter } from "next/router";
-import Link from "next/link";
+
+// TODO: add more detail and style to this page
 
 const P = styled.div`
   width: 100vw;
@@ -20,11 +21,14 @@ const P = styled.div`
   }
 `;
 
-const CB = styled.div`
+// close the popup menu
+const CloseButton = styled.button`
   font-size: 1.4rem;
   position: absolute;
   right: 30px;
   top: 30px;
+  background: none;
+  border: none;
 `;
 
 export default function PoppuMenu({ links, isClosed, handler }) {
@@ -32,14 +36,16 @@ export default function PoppuMenu({ links, isClosed, handler }) {
   const router = useRouter();
   return (
     <P isClosed={isClosed}>
-      <CB onClick={() => handler(!isClosed)}>⤫</CB>
+      <CloseButton onClick={() => handler(!isClosed)}>⤫</CloseButton>
+      {/* menu */}
       <div>
         {li.map((linkname, index) => (
           <div
             key={index}
             onClick={() => {
-              // e.preventDefault();
+              // redirect
               router.push(`/${linkname}`);
+              // close popupMenu
               handler(true);
             }}
           >

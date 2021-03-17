@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import Burgers from "./Burgers";
 
 // TODO: make the navbar appear when scrollup
-const H = styled.div`
+const Container = styled.div`
   width: 100%;
   height: 38px;
   background-color: #f5f5f5;
@@ -15,14 +15,14 @@ const H = styled.div`
   align-items: center;
 `;
 
-const Sa = styled.a`
+const SL = styled(Link)`
   height: 38px;
   padding: 0 20px;
   display: flex;
   align-items: center;
-  background-color: ${(props) => (props.isCurrent ? "#e0e0e0" : "")};
+  background-color: ${(props) => props.isCurrent && "#e0e0e0"};
   &:hover {
-    background-color: ${(props) => (props.isCurrent ? "#fafafa" : "#e0e0e0")};
+    background-color: ${(props) => props.isCurrent || "#e0e0e0"};
     & i {
       color: #ff7043;
     }
@@ -36,18 +36,18 @@ const iconStyle = {
 };
 
 export default function Navbar({ handler }) {
-  // console.log(handler);
   const router = useRouter();
   return (
-    <H>
-      <Sa isCurrent={router.pathname === "/"}>
-        <i aria-hidden className="fas fa-shoe-prints" style={iconStyle}></i>
-        <Link href="/">
+    <Container>
+      <SL isCurrent={router.pathname === "/"} href="/" as="a">
+        <>
+          <i aria-hidden className="fas fa-shoe-prints" style={iconStyle}></i>
           <strong>Sheng's Portofolio</strong>
-        </Link>
-      </Sa>
+        </>
+      </SL>
       <NavLinks links="projects blogs contact" />
+      {/* hambuger menu to open popup menu on small screen */}
       <Burgers handler={handler} />
-    </H>
+    </Container>
   );
 }

@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import Link from "next/link";
 
-const RMButton = styled.div`
+const Button = styled(Link)`
   width: 180px;
   margin-top: 10px;
   background-color: white;
@@ -28,5 +29,17 @@ const RMButton = styled.div`
     width: 100%;
   }
 `;
+
+const RMButton = ({ post }) => (
+  <Button
+    href={{
+      pathname: `/blog/${post.subFolderName}/${post.slug}`,
+    }}
+    // as is critical here, without it, Link will still be rendered as a, but without SC class and style
+    as="a"
+  >
+    Read more ...
+  </Button>
+);
 
 export default RMButton;

@@ -9,7 +9,7 @@ const Title = styled.h3`
   padding-bottom: 10px;
 `;
 
-export default function Projects({ projects, title, ...props }) {
+export default function Projects({ projects, title }) {
   return (
     <Layout pageTitle={title}>
       <Title>My Projects</Title>

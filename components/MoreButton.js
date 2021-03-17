@@ -8,6 +8,7 @@ const M = styled.div`
   text-align: center;
 `;
 
+// load more button
 const MoreButton = ({ link }) => (
   <Link href={`/${link}`}>
     <M>...</M>

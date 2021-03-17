@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 
-const Fiv = styled.div`
+const Container = styled.nav`
   display: flex;
   justify-content: center;
   border-right: solid #e0e0e0 1px;
@@ -12,21 +12,20 @@ const Fiv = styled.div`
   }
 `;
 
-const Siv = styled.div`
+const SL = styled(Link)`
   padding: 5px 10px;
   height: 38px;
   border-left: solid #e0e0e0 1px;
-  background-color: ${(props) => (props.isCurrent ? "#e0e0e0" : "")};
+  background-color: ${(props) => props.isCurrent && "#e0e0e0"};
   cursor: pointer;
   &:hover {
-    background-color: ${(props) => (props.isCurrent ? "#fafafa" : "#9e9e9e")};
-    color: ${(props) => (props.isCurrent ? "" : "white")};
+    background-color: ${(props) => props.isCurrent || "#e0e0e0"};
   }
-  &:focus {
+  /* &:focus {
     outline: none;
     background-color: #e64a19;
     color: white;
-  }
+  } */
 `;
 
 // links: "projects blogs contacts about"
@@ -34,18 +33,18 @@ export default function NavLinks({ links }) {
   const li = links.split(" ");
   const router = useRouter();
   return (
-    <Fiv>
+    <Container>
       {li.map((linkname, index) => (
-        <Siv
+        <SL
           key={index}
           isCurrent={router.pathname === "/" + linkname}
-          tabIndex={index + 1}
+          // tabIndex={index + 1}
+          href={`/${linkname}`}
+          as="a"
         >
-          <Link href={`/${linkname}`}>
-            <a tabIndex={-1}>{linkname}</a>
-          </Link>
-        </Siv>
+          {linkname}
+        </SL>
       ))}
-    </Fiv>
+    </Container>
   );
 }
