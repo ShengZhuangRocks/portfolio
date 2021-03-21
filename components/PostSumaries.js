@@ -62,7 +62,6 @@ export default function ProjectSumaries({ posts }) {
                   <div>
                     <p className="date">{post.frontmatter.date}</p>
                     <h4>{post.frontmatter.title}</h4>
-                    {/* <p>{post.contentSnippet}...</p> */}
                     <ReactMarkdown
                       source={post.contentSnippet}
                       renderers={{ code: CodeBlock }}
