@@ -11,9 +11,7 @@
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
-    "test": "jest",
-    "build:css": "postcss styles/tailwind.css -o styles/main.css",
-    "watch:css": "postcss styles/tailwind.css -o styles/main.css"
+    "test": "jest"
   },
   "dependencies": {
     "gray-matter": "^4.0.2",
