@@ -39,6 +39,7 @@ export default function Navbar({ handler }) {
   const router = useRouter();
   return (
     <Container>
+      {/* TODO: class on server don't match with client */}
       <SL isCurrent={router.pathname === "/"} href="/" as="a">
         <>
           <i aria-hidden className="fas fa-shoe-prints" style={iconStyle}></i>

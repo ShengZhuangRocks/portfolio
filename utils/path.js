@@ -18,7 +18,7 @@ export const getFileName = (path) => {
  * @return {string} "sub" from example input above
  */
 export const getSubfolderName = (path) => {
-  const re = /^\.\/([ a-z | A-Z | - ]+)\/.+md$/;
+  const re = /^\.\/([ \w | \- ]+)\/.+md$/;
   // const re = new RegExp(
   //   "^\\.\\/" + // start with ./
   //     "([ x-z | X-Z | \\- ]+)" + // sub | s-ub | suB

@@ -1,5 +1,5 @@
 ---
-title: "How to set and get data in Redux"
+title: "How to understand Redux easily"
 author: "Sheng Zhuang"
 date: "03/03/2021"
 stack: "React Redux"

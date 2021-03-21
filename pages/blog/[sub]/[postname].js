@@ -7,7 +7,8 @@ import CodeBlock from "../../../utils/CodeBlock";
 import styled from "styled-components";
 
 const SR = styled.div`
-  & h3 {
+  & h3,
+  h4 {
     padding: 10px 0;
   }
   & p {
@@ -17,6 +18,9 @@ const SR = styled.div`
     margin: 20px 0;
     border: none;
     border-top: dotted 3px black;
+  }
+  & a {
+    color: blue;
   }
 `;
 

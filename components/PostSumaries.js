@@ -1,9 +1,10 @@
 import React from "react";
-import Link from "next/link";
 import { PostCard } from "./PostCard";
 import styled from "styled-components";
 import Image from "next/image";
 import RMButton from "./RMButton";
+import ReactMarkdown from "react-markdown";
+import CodeBlock from "../utils/CodeBlock";
 
 // card content container
 const C3 = styled.div`
@@ -17,6 +18,9 @@ const C3 = styled.div`
     justify-content: space-between;
     & p.date {
       font-size: 11pt;
+    }
+    & p {
+      overflow: hidden;
     }
   }
   & .button-flex {
@@ -58,7 +62,11 @@ export default function ProjectSumaries({ posts }) {
                   <div>
                     <p className="date">{post.frontmatter.date}</p>
                     <h4>{post.frontmatter.title}</h4>
-                    <p>{post.contentSnippet}...</p>
+                    {/* <p>{post.contentSnippet}...</p> */}
+                    <ReactMarkdown
+                      source={post.contentSnippet}
+                      renderers={{ code: CodeBlock }}
+                    />
                   </div>
                   <div className="button-flex">
                     <RMButton post={post}>Read more ...</RMButton>

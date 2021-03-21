@@ -20,5 +20,3 @@ export const PostCard = styled.div`
     }
   }
 `;
-
-// export const IntroCard = styled.div``;

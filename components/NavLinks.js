@@ -21,6 +21,9 @@ const SL = styled(Link)`
   &:hover {
     background-color: ${(props) => props.isCurrent || "#e0e0e0"};
   }
+  /* TODO: current focus on both mouse and keyboard event
+           need to make it only on keyboard event
+  */
   /* &:focus {
     outline: none;
     background-color: #e64a19;

@@ -11,6 +11,7 @@
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
+    "test": "jest",
     "build:css": "postcss styles/tailwind.css -o styles/main.css",
     "watch:css": "postcss styles/tailwind.css -o styles/main.css"
   },
@@ -27,7 +28,14 @@
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
+    "@testing-library/dom": "^7.30.0",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "babel-jest": "^26.6.3",
     "file-loader": "^6.2.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.3",
+    "jest-dom": "^4.0.0",
     "postcss": "^8.2.8",
     "postcss-preset-env": "^6.7.0",
     "tailwindcss": "^2.0.3",

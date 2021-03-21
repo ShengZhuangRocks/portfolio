@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Navbar from "./Navbar";
-import FloatBar from "./FloatBar";
+// import FloatBar from "./FloatBar";
 import ToTopButton from "./ToTopButton";
 import styled from "styled-components";
 import Infobar from "./Infobar";
