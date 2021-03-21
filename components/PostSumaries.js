@@ -50,7 +50,7 @@ export default function ProjectSumaries({ posts }) {
                 {/* not sure why this behaviour, need to dig into next/image */}
                 <div>
                   <Image
-                    src={`/static/${post.frontmatter.image}`}
+                    src={`/${post.frontmatter.image}`}
                     alt="image missing"
                     width={180}
                     height={180}
@@ -62,11 +62,11 @@ export default function ProjectSumaries({ posts }) {
                   <div>
                     <p className="date">{post.frontmatter.date}</p>
                     <h4>{post.frontmatter.title}</h4>
-                    <p>{post.contentSnippet}...</p>
-                    {/* <ReactMarkdown
+                    {/* <p>{post.contentSnippet}...</p> */}
+                    <ReactMarkdown
                       source={post.contentSnippet}
                       renderers={{ code: CodeBlock }}
-                    /> */}
+                    />
                   </div>
                   <div className="button-flex">
                     <RMButton post={post}>Read more ...</RMButton>
