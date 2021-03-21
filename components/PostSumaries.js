@@ -62,10 +62,11 @@ export default function ProjectSumaries({ posts }) {
                   <div>
                     <p className="date">{post.frontmatter.date}</p>
                     <h4>{post.frontmatter.title}</h4>
-                    <ReactMarkdown
+                    <p>{post.contentSnippet}...</p>
+                    {/* <ReactMarkdown
                       source={post.contentSnippet}
                       renderers={{ code: CodeBlock }}
-                    />
+                    /> */}
                   </div>
                   <div className="button-flex">
                     <RMButton post={post}>Read more ...</RMButton>
